@@ -1,0 +1,37 @@
+Algorithm Project 1 CSCI 1250
+
+Display Welcome to the ticket price calculator.
+Display my name
+Display press enter to continue.
+
+Ask how many adult tickets you wish to purchase
+Get number, store in a var
+Ask how many child/elder tickets you wish to purchase
+Get number and store in a var
+
+Ask what option they want to chose. 
+Display the options.
+Enters number selection, stores in a var
+
+If option 1 then calculate the price of the tickets and 
+add on the free shipping amount ($0.00)
+Display calculation and the total amount
+Display thank you message
+
+If option 2 then calculate the price of the tickets and 
+subtract the 10% discount add $5 in shipping
+Display calculation and the total amount
+Display thank you message
+
+If option 3 then calculate the price of the tickets and 
+do both option 1 and 2 and then display the cheapest answer
+Display calculation and the total amount
+Display thank you message
+
+If the user inputs an option that isnt available 
+Display the option is not valid but give free shipping anyway.
+add on the free shipping amount ($0.00)
+Display calculation and the total amount
+Display thank you message
+
+
