@@ -1,12 +1,9 @@
-package project1;
-
 import java.util.Scanner;
-
 
 public class Project1 {
 	public static void main(String[] args){
 		
-		final double priceAdult;
+		final double priceAdult; //declare variables	
 		final double priceOther;
 		
 		int option;
@@ -33,7 +30,7 @@ public class Project1 {
 		
 		Scanner input = new Scanner(System.in); 
 		
-		System.out.println ("******WELCOME TO THE TICKET PRICE CALCULATOR******");
+		System.out.println ("******WELCOME TO THE TICKET PRICE CALCULATOR******"); //introduction screen
 		System.out.println ("              Created by: Ryan Shupe              ");
 		System.out.println();
 		System.out.println();
@@ -41,10 +38,41 @@ public class Project1 {
 		input.nextLine();
 		
 		System.out.print("How many adult tickets do you wish to purchase?");
-		numAdult = input.nextInt();
+		numAdult = input.nextInt(); //gets number of adult tickets
 		
 		System.out.print("How many student/senior tickets do you wish to purchase?");
-		numOther = input.nextInt();
+		numOther = input.nextInt(); //gets number of other tickets
+
+		System.out.println(); //clear screen
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();		
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();	
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
 		
 		System.out.println ("Please make a selection from the menu options below for additional savings");
 		System.out.println();
@@ -57,19 +85,45 @@ public class Project1 {
 		System.out.print("           Enter your selection: ");
 		option = input.nextInt();
 		
+		System.out.println(); //clear screen
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();			
+
 		
-		totalPriceAdult = priceAdult * numAdult;
-		totalPriceOther = priceOther * numOther;
 		
-		totalPriceTicket = totalPriceOther + totalPriceAdult;
+		totalPriceAdult = priceAdult * numAdult; //calculates price for the Adult tickets
+		totalPriceOther = priceOther * numOther; //calculates price for the Other tickets
 		
-		discountPrice = discount * totalPriceTicket;
+		totalPriceTicket = totalPriceOther + totalPriceAdult; //calulates total price of all the tickets
 		
-		totalPriceTicket2 = totalPriceTicket - discount + shipping; 	
+		discountPrice = discount * totalPriceTicket; //calculates total discount price
+		
+		totalPriceTicket2 = totalPriceTicket - discount + shipping; 	//calculates price with discount and shipping
 
 		
 		switch (option) {
-			case 1:
+			case 1: //happens if user enters 1
 					System.out.println("		Purchase Price: $" + totalPriceTicket);
 					System.out.println("		Discount Applied $-0.00");
 					System.out.println("		Shipping: $0.00 FREE SHIPPING");
@@ -79,7 +133,7 @@ public class Project1 {
 					System.out.println();
 					System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
 				break;
-			case 2:
+			case 2://happens if user enters 2
 					System.out.println("		Purchase Price: $" + totalPriceTicket);
 					System.out.println("		Discount Applied -$" + discountPrice + " (10% discount)");
 					System.out.println("		Shipping: +$5.00");
@@ -89,7 +143,7 @@ public class Project1 {
 					System.out.println();
 					System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
 				break;
-			case 3:
+			case 3: //happens if user enters 3
 					if (totalPriceTicket < totalPriceTicket2) {
 						System.out.println("		Purchase Price: $" + totalPriceTicket);
 						System.out.println("		Discount Applied $-0.00");
@@ -114,7 +168,7 @@ public class Project1 {
 				break;
 			
 			default:
-					System.out.println("Sorry, that ws not a valid option. We will apply");
+					System.out.println("Sorry, that ws not a valid option. We will apply"); //used if use enters something other than 1-3
 					System.out.println("free shipping to save you a total of $" + shipping);
 					System.out.println();
 					System.out.println();
@@ -127,9 +181,6 @@ public class Project1 {
 					System.out.println();
 					System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
 				break;
-		}
-		
-		
-
-	}
-}
+		}//end switch
+	}//end main
+}//end Class
