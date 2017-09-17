@@ -1,34 +1,42 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Project1 {
 	public static void main(String[] args){
 		
 		final double priceAdult; //declare variables	
 		final double priceOther;
+		final double shipping;
+		
+		final float discount;
+
+		double totalPriceAdult;
+		double totalPriceOther;
+		double totalPrice;	
+		double finalPriceDiscount;
+		double discountPrice;
 		
 		int option;
 		int numAdult;
 		int numOther;
+		int screenClear;
 		
-		double totalPriceTicket;	
-		double totalPriceTicket2;
-		double totalPriceAdult;
-		double totalPriceOther;
-		
-		
-		final double discount;
-		final double shipping;
-		
-		double discountPrice;
-		
-		priceAdult = 10;
-		priceOther = 5;
-		
-		discount = .10;
-		shipping = 5.00;
 
+		priceAdult = 10.00;
+		priceOther = 5.00;
+		
+		discount = .10f;
+		shipping = 5.00;
+				
+		screenClear = 23;
 		
 		Scanner input = new Scanner(System.in); 
+		
+        DecimalFormat formatCash = new DecimalFormat("0.00");
+        DecimalFormat formatPerc = new DecimalFormat("00.0%");
+		
+        String fShipping = formatCash.format(shipping);
+        String fPercent = formatPerc.format(discount);
 		
 		System.out.println ("******WELCOME TO THE TICKET PRICE CALCULATOR******"); //introduction screen
 		System.out.println ("              Created by: Ryan Shupe              ");
@@ -43,144 +51,99 @@ public class Project1 {
 		System.out.print("How many student/senior tickets do you wish to purchase?");
 		numOther = input.nextInt(); //gets number of other tickets
 
-		System.out.println(); //clear screen
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();		
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();	
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
+		for (int i = 0; i < screenClear; i++){ //clears screen
+			System.out.println();
+		}
 		
 		System.out.println ("Please make a selection from the menu options below for additional savings");
 		System.out.println();
 		System.out.println ("              Savings Menu               ");
 		System.out.println ("             --------------              ");
 		System.out.println ("          1. Free Shipping               ");
-		System.out.println ("          2. 10.0% discount              ");
-		System.out.println ("          3. Apply whichever disvount will save me the most money");
+		System.out.println ("          2. "+ fPercent +" discount              ");
+		System.out.println ("          3. Apply whichever discount will save me the most money");
 		System.out.println();
 		System.out.print("           Enter your selection: ");
 		option = input.nextInt();
-		
-		System.out.println(); //clear screen
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();			
+		input.close();
 
-		
-		
+		for (int i = 0; i < screenClear; i++){ //clears screen
+			System.out.println();
+		}
+
 		totalPriceAdult = priceAdult * numAdult; //calculates price for the Adult tickets
 		totalPriceOther = priceOther * numOther; //calculates price for the Other tickets
 		
-		totalPriceTicket = totalPriceOther + totalPriceAdult; //calulates total price of all the tickets
+		totalPrice = totalPriceOther + totalPriceAdult; //calculates total price of all the tickets
 		
-		discountPrice = discount * totalPriceTicket; //calculates total discount price
+		discountPrice = discount * totalPrice; //calculates total discount price
 		
-		totalPriceTicket2 = totalPriceTicket - discount + shipping; 	//calculates price with discount and shipping
+		finalPriceDiscount = totalPrice - discountPrice + shipping; 	//calculates price with discount and shipping
+		
+        String fTotalPrice = formatCash.format(totalPrice);
+        String fTotalPriceDiscount = formatCash.format(finalPriceDiscount);
+        String fDiscountPrice = formatCash.format(discountPrice);
 
-		
 		switch (option) {
 			case 1: //happens if user enters 1
-					System.out.println("		Purchase Price: $" + totalPriceTicket);
+					System.out.println("		Purchase Price: $" + fTotalPrice);
 					System.out.println("		Discount Applied $-0.00");
 					System.out.println("		Shipping: $0.00 FREE SHIPPING");
 					System.out.println("-------------------------------------------------------------");
-					System.out.println("		Total Due $" + totalPriceTicket);
+					System.out.println("		Total Due $" + fTotalPrice);
 					System.out.println();
 					System.out.println();
 					System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
 				break;
 			case 2://happens if user enters 2
-					System.out.println("		Purchase Price: $" + totalPriceTicket);
-					System.out.println("		Discount Applied -$" + discountPrice + " (10% discount)");
-					System.out.println("		Shipping: +$5.00");
+					System.out.println("		Purchase Price: $" + fTotalPrice);
+					System.out.println("		Discount Applied -$" + fDiscountPrice + " (" + fPercent + " discount)");
+					System.out.println("		Shipping: $" + fShipping);
 					System.out.println("-------------------------------------------------------------");
-					System.out.println("		Total Due $" + totalPriceTicket2);
+					System.out.println("		Total Due $" + fTotalPriceDiscount);
 					System.out.println();
 					System.out.println();
 					System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
 				break;
 			case 3: //happens if user enters 3
-					if (totalPriceTicket < totalPriceTicket2) {
-						System.out.println("		Purchase Price: $" + totalPriceTicket);
+					if (totalPrice < finalPriceDiscount) {
+						System.out.println("		Purchase Price: $" + fTotalPrice);
 						System.out.println("		Discount Applied $-0.00");
 						System.out.println("		Shipping: $0.00 FREE SHIPPING");
 						System.out.println("-------------------------------------------------------------");
-						System.out.println("		Total Due $" + totalPriceTicket);
+						System.out.println("		Total Due $" + fTotalPrice);
 						System.out.println();
 						System.out.println();
 						System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
-					}
-					
-					if (totalPriceTicket2 < totalPriceTicket) {
-						System.out.println("		Purchase Price: $" + totalPriceTicket);
-						System.out.println("		Discount Applied -$" + discountPrice + " (10% discount)");
-						System.out.println("		Shipping: +$5.00");
-						System.out.println("-------------------------------------------------------------");
-						System.out.println("		Total Due $" + totalPriceTicket2);
-						System.out.println();
-						System.out.println();
-						System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
-					}
+						}
+						else {
+							System.out.println("		Purchase Price: $" + fTotalPrice);
+							System.out.println("		Discount Applied -$" + fDiscountPrice + " (" + fPercent + " discount)");
+							System.out.println("		Shipping: $" + fShipping);
+							System.out.println("-------------------------------------------------------------");
+							System.out.println("		Total Due $" + fTotalPriceDiscount);
+							System.out.println();
+							System.out.println();
+							System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
+							
+						}
 				break;
-			
+					
 			default:
-					System.out.println("Sorry, that ws not a valid option. We will apply"); //used if use enters something other than 1-3
+					System.out.println("Sorry, that was not a valid option. We will apply"); //used if use enters something other than 1-3
 					System.out.println("free shipping to save you a total of $" + shipping);
 					System.out.println();
 					System.out.println();
-					System.out.println("		Purchase Price: $" + totalPriceTicket);
+					System.out.println("		Purchase Price: $" + fTotalPrice);
 					System.out.println("		Discount Applied $-0.00");
 					System.out.println("		Shipping: $0.00 FREE SHIPPING");
 					System.out.println("-------------------------------------------------------------");
-					System.out.println("		Total Due $" + totalPriceTicket);
+					System.out.println("		Total Due $" + fTotalPrice);
 					System.out.println();
 					System.out.println();
 					System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
 				break;
+
 		}//end switch
 	}//end main
 }//end Class
