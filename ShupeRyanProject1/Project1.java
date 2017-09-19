@@ -7,8 +7,7 @@ public class Project1 {
 		final double priceAdult; //declare variables	
 		final double priceOther;
 		final double shipping;
-		
-		final float discount;
+		final double discount;
 
 		double totalPriceAdult;
 		double totalPriceOther;
@@ -25,14 +24,14 @@ public class Project1 {
 		priceAdult = 10.00;
 		priceOther = 5.00;
 		
-		discount = .10f;
 		shipping = 5.00;
+		discount = .10;
 				
 		screenClear = 23;
 		
 		Scanner input = new Scanner(System.in); 
 		
-        DecimalFormat formatCash = new DecimalFormat("0.00");
+        DecimalFormat formatCash = new DecimalFormat("0.00");// format doubles
         DecimalFormat formatPerc = new DecimalFormat("00.0%");
 		
         String fShipping = formatCash.format(shipping);
