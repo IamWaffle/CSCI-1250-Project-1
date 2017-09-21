@@ -27,7 +27,7 @@ public class Project1 {
 		shipping = 5.00;
 		discount = .10;
 				
-		screenClear = 23;
+		screenClear = 35;
 		
 		Scanner input = new Scanner(System.in); 
 		
@@ -44,10 +44,10 @@ public class Project1 {
 		System.out.println("              --Press ENTER to Coninue--           ");
 		input.nextLine();
 		
-		System.out.print("How many adult tickets do you wish to purchase?");
+		System.out.print("How many adult tickets do you wish to purchase? ");
 		numAdult = input.nextInt(); //gets number of adult tickets
 		
-		System.out.print("How many student/senior tickets do you wish to purchase?");
+		System.out.print("How many student/senior tickets do you wish to purchase? ");
 		numOther = input.nextInt(); //gets number of other tickets
 
 		for (int i = 0; i < screenClear; i++){ //clears screen
@@ -130,7 +130,7 @@ public class Project1 {
 					
 			default:
 					System.out.println("Sorry, that was not a valid option. We will apply"); //used if use enters something other than 1-3
-					System.out.println("free shipping to save you a total of $" + shipping);
+					System.out.println("free shipping to save you a total of $" + fshipping);
 					System.out.println();
 					System.out.println();
 					System.out.println("		Purchase Price: $" + fTotalPrice);
