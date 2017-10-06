@@ -44,10 +44,10 @@ public class Project1 {
 		System.out.println("              --Press ENTER to Coninue--           ");
 		input.nextLine();
 		
-		System.out.print("How many adult tickets do you wish to purchase? ");
+		System.out.print("How many adult tickets do you wish to purchase? (ages 18-64) ");
 		numAdult = input.nextInt(); //gets number of adult tickets
 		
-		System.out.print("How many student/senior tickets do you wish to purchase? ");
+		System.out.print("How many student/senior tickets do you wish to purchase? (ages 0-17 or 65+) ");
 		numOther = input.nextInt(); //gets number of other tickets
 
 		for (int i = 0; i < screenClear; i++){ //clears screen
@@ -90,9 +90,6 @@ public class Project1 {
 					System.out.println("		Shipping: $0.00 FREE SHIPPING");
 					System.out.println("-------------------------------------------------------------");
 					System.out.println("		Total Due: " + fTotalPrice);
-					System.out.println();
-					System.out.println();
-					System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
 				break;
 			case 2://happens if user enters 2
 					System.out.println("		Purchase Price: " + fTotalPrice);
@@ -100,9 +97,6 @@ public class Project1 {
 					System.out.println("		Shipping: " + fShipping);
 					System.out.println("-------------------------------------------------------------");
 					System.out.println("		Total Due: " + fTotalPriceDiscount);
-					System.out.println();
-					System.out.println();
-					System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
 				break;
 			case 3: //happens if user enters 3
 					if (totalPrice < finalPriceDiscount) {
@@ -111,20 +105,13 @@ public class Project1 {
 						System.out.println("		Shipping: $0.00 FREE SHIPPING");
 						System.out.println("-------------------------------------------------------------");
 						System.out.println("		Total Due: " + fTotalPrice);
-						System.out.println();
-						System.out.println();
-						System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
 						}
 						else {
 							System.out.println("		Purchase Price: " + fTotalPrice);
 							System.out.println("		Discount Applied -" + fDiscountPrice + " (" + fPercent + " discount)");
 							System.out.println("		Shipping: " + fShipping);
 							System.out.println("-------------------------------------------------------------");
-							System.out.println("		Total Due: " + fTotalPriceDiscount);
-							System.out.println();
-							System.out.println();
-							System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
-							
+							System.out.println("		Total Due: " + fTotalPriceDiscount);	
 						}
 				break;
 					
@@ -138,11 +125,12 @@ public class Project1 {
 					System.out.println("		Shipping: $0.00 FREE SHIPPING");
 					System.out.println("-------------------------------------------------------------");
 					System.out.println("		Total Due $" + fTotalPrice);
-					System.out.println();
-					System.out.println();
-					System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
-				break;
 
+				break;		
 		}//end switch
+		
+		System.out.println();
+		System.out.println();
+		System.out.println("******Thank you for using THE TICKET PRICE CALCULATOR******");
 	}//end main
 }//end Class
