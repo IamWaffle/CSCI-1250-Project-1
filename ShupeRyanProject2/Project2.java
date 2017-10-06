@@ -152,19 +152,7 @@ public class Project1 {
 								System.out.println("		Total Due: " + fTotalPriceDiscount);	
 							}
 					break;
-					
-				default:
-						System.out.println("Sorry, that was not a valid option. We will apply"); //used if use enters something other than 1-3
-						System.out.println("free shipping to save you a total of $" + fShipping);
-						System.out.println();
-						System.out.println();
-						System.out.println("		Purchase Price: $" + fTotalPrice);
-						System.out.println("		Discount Applied $-0.00");
-						System.out.println("		Shipping: $0.00 FREE SHIPPING");
-						System.out.println("-------------------------------------------------------------");
-						System.out.println("		Total Due $" + fTotalPrice);
-
-					break;		
+						
 			}//end switch
 		
 			System.out.println();
