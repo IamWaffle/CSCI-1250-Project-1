@@ -1,0 +1,46 @@
+Algorithm Project 1 CSCI 1250 - Ryan Shupe
+
+Display Welcome to the ticket price calculator.
+Display my name
+Display press enter to continue.
+
+Ask how many adult tickets you wish to purchase
+Get number, store in a var
+If the user inputs a number that isnt available 
+repeat the screen until the user enters a valid number
+
+Ask how many child/elder tickets you wish to purchase
+Get number and store in a var
+If the user inputs a number that isnt available 
+repeat the screen until the user enters a valid number
+
+Ask what option they want to chose. 
+Display the options.
+Enters number selection, stores in a var
+
+If option 1 then calculate the price of the tickets (number * price) and 
+add on the free shipping amount ($0.00)
+Display calculation and the total amount
+Display thank you message
+
+If option 2 then calculate the price of the tickets (number * price) and 
+subtract the 10% discount (.10 * total price) add $5 in shipping
+Display calculation and the total amount
+Display thank you message
+
+If option 3 then calculate the price of the tickets (number * price) and 
+do both option 1 and 2 and then display the cheapest answer
+Display calculation and the total amount
+Display thank you message
+
+If the user inputs an option that isnt available 
+repeat the option screen until the user enters a valid option
+
+At the end display a message asking if they want to repeat the program
+get a Y or an N store in a char
+if letter isnt a Y or N then repeat until it isnt
+
+If user entered in a Y then repeat the entire program without intro screen
+
+If user enterd in a N then 
+Display another thank you message
