@@ -1,35 +1,56 @@
+/*********************************************************************************** * 
+------------------------------------------------------------------------------------ 
+* 	  File name: Project2.java 
+*     Project name: CSCI 1250 Project 2 
+* ------------------------------------------------------------------------------------ 
+*     Author Name: Ryan 
+*     Author E-mail: shuper@etsu.edu 
+*     Course-Section: CSCI-1250-004
+*     Creation Date: 10/13/17 
+*     Date of Last Modification: 10/13/17 
+* ------------------------------------------------------------------------------------ */
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
-public class Project1 {
+/*********************************************************************************** 
+ * Class Name: Project2 <br> 
+ *  Class Purpose: Project 2 <br> 
+ *  
+ *   <hr> 
+ *   Date created: 10/13/17 <br> 
+ *   Date last modified: 10/13/17 
+ *   @author Ryan Shupe */
+
+public class Project2 {
+	
 	public static void main(String[] args){
 		
-		final double priceAdult; //declare variables	
-		final double priceOther;
-		final double shipping;
-		final double discount;
+		final double PRICE_ADULT; //Price of the adult ticket	*CONSTANT*
+		final double PRICE_OTHER; //Price of the elder/child ticket *CONSTANT*
+		final double SHIPPING; //Price of Shipping *CONSTANT*
+		final double DISCOUNT; //Percent of discount *CONSTANT*
 
-		double totalPriceAdult;
-		double totalPriceOther;
-		double totalPrice;	
-		double finalPriceDiscount;
-		double discountPrice;
+		double totalPriceAdult; //Total price of adult tickets
+		double totalPriceOther;//Total price of elder/child tickets
+		double totalPrice;	//Total price all together
+		double finalPriceDiscount; //Total price discount included
+		double discountPrice; //Total price of the discount
 		
-		int option;
-		int numAdult;
-		int numOther;
-		int screenClear;
+		int option; //option number
+		int numAdult; //number of adult tickets
+		int numOther; //number of other tickets
+		int screenClear; //how many lines to println
 		
-		char repeat;
+		char repeat; //holds a y or n to repeat the program or not
 		
 		
 
-		priceAdult = 10.00;
-		priceOther = 5.00;
+		PRICE_ADULT = 10.00;
+		PRICE_OTHER = 5.00;
 		
-		shipping = 5.00;
-		discount = .10;
-				
+		SHIPPING = 5.00;
+		DISCOUNT = .10;
+		
 		screenClear = 35;
 		
 		Scanner input = new Scanner(System.in); 
@@ -37,8 +58,8 @@ public class Project1 {
         DecimalFormat formatCash = new DecimalFormat("$ #,##0.00");// format doubles
         DecimalFormat formatPerc = new DecimalFormat("00.0%");
 		
-        String fShipping = formatCash.format(shipping);
-        String fPercent = formatPerc.format(discount);
+        String fShipping = formatCash.format(SHIPPING);
+        String fPercent = formatPerc.format(DISCOUNT);
 		
         
         
@@ -46,7 +67,7 @@ public class Project1 {
 		System.out.println ("              Created by: Ryan Shupe              ");
 		System.out.println();
 		System.out.println();
-		System.out.println("              --Press ENTER to Coninue--           ");
+		System.out.println("              --Press ENTER to Continue--           ");
 		input.nextLine();
 		
 		do {
@@ -108,14 +129,14 @@ public class Project1 {
 				System.out.println();
 			}
 
-			totalPriceAdult = priceAdult * numAdult; //calculates price for the Adult tickets
-			totalPriceOther = priceOther * numOther; //calculates price for the Other tickets
+			totalPriceAdult = PRICE_ADULT * numAdult; //calculates price for the Adult tickets
+			totalPriceOther = PRICE_OTHER * numOther; //calculates price for the Other tickets
 		
 			totalPrice = totalPriceOther + totalPriceAdult; //calculates total price of all the tickets
 		
-			discountPrice = discount * totalPrice; //calculates total discount price
+			discountPrice = DISCOUNT * totalPrice; //calculates total discount price
 		
-			finalPriceDiscount = totalPrice - discountPrice + shipping; 	//calculates price with discount and shipping
+			finalPriceDiscount = totalPrice - discountPrice + SHIPPING; 	//calculates price with discount and shipping
 		
         	String fTotalPrice = formatCash.format(totalPrice);
         	String fTotalPriceDiscount = formatCash.format(finalPriceDiscount);
@@ -181,9 +202,10 @@ public class Project1 {
 				for (int i = 0; i < screenClear; i++){ //clears screen
 					System.out.println();
 				}
+				
 				System.out.println("Thanks again for using the TICKET PRICE CALCULATOR!");
 			}
 		
-        }while(repeat == 'Y');//
+        }while(repeat == 'Y');//will repeat if it is equal to Y
 	}//end main
 }//end Class
