@@ -47,7 +47,7 @@ return average
 
 Method: findLetterGrade
 
-UML: __+findLetterGrade(grade:double):char__
+UML: __+findLetterGrade(average:double):char__
 
 get the average testscore
 compare to appropriate letter grade
@@ -56,11 +56,11 @@ return char lettergrade
 
 Method: calcGPA
 
-UML:__+calcGPA(lettergrade:char):char__
+UML:__+calcGPA(lettergrade:char):double__
 
 get the lettergrade
-match lettergrade to appropriate gpa letter
-return gpa letter
+match lettergrade to appropriate gpa number
+return gpa 
 
 
 Method: runAgain

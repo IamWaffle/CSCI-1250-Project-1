@@ -16,19 +16,50 @@ import java.util.Scanner;
  *  
  *   <hr> 
  *   Date created: 10/20/17 <br> 
- *   Date last modified: 10/20/17 
+ *   Date last modified: 10/24/17 
  *   @author Ryan Shupe */
 
 public class Project3 {
 	
 	public static void main(String[] args){
-		double testScore;
+		double testScore1;
+		double testScore2;
+		double testScore3;
+		double average;
+		double gpa;
 		
+		char letterGrade = 0;
+		char runAgain = 'Y';
 		
-		
-		displayWelcomeMessage();
-		pressEnterToContinue();
+		do {
+			displayWelcomeMessage();
+			pressEnterToContinue();
+			
+			System.out.println("Test 1");
+			testScore1 = getTestScore();
+			
+			System.out.println("Test 2");
+			testScore2 = getTestScore();
+			
+			System.out.println("Test 3");
+			testScore3 = getTestScore();
+			
+			average = calcAverage(testScore1, testScore2, testScore3);
+			System.out.println("The average of all 3 test scores is: " + average);
+			
+			letterGrade = findLetterGrade(average);
+			System.out.println("The letter grade is: " + letterGrade);
+			
+			gpa = calcGPA(letterGrade);
+			System.out.println("The GPA is: " + gpa);
+			
+			pressEnterToContinue();
+			
+			runAgain = runAgain();
+		}while(runAgain == 'Y');
+			
 		displayEndingMessage();
+		pressEnterToContinue();
 	}//end main
 	
 	public static void displayWelcomeMessage() {
@@ -48,34 +79,79 @@ public class Project3 {
 	} // end enter to continue
 	
 	public static double getTestScore() {
-		double testScore = 0;
+		double testScore;
 		
-		return testScore;
+		Scanner input = new Scanner(System.in);
 		
+		do {
+			System.out.print("Enter a test score 0 - 100: ");
+			testScore = input.nextDouble();
+		}while(testScore <=0 || testScore >= 100);
+		
+		return testScore;	
 	} //end get test score
 	
-	public static double calcAverage(double test1, double test2, double test3) {
-		double average = 0;
+	public static double calcAverage(double testScore1, double testScore2, double testScore3) {
+		double average;
 		
-		return average;
+		average = (testScore1 + testScore2 + testScore3) / 3;
 		
+		return average;	
 	} // end calc average
 	
 	public static char findLetterGrade(double average) {
-		char letterGrade = 'A';
+		char letterGrade = 0;
+		
+		if (average >= 90) {
+			letterGrade = 'A';
+		}else if (average >= 80) {
+			letterGrade  = 'B';
+		}else if (average >= 70) {
+			letterGrade = 'C';
+		}else if (average >= 60) {
+			letterGrade = 'D';
+		}else {
+			letterGrade = 'F';
+		}
 		
 		return letterGrade;
-		
 	} //end find letter grade
 	
-	public static char calcGPA(char letterGrade) {
-		char gpaLetter = 'A';
-		return gpaLetter;
+	public static double calcGPA(char letterGrade) {
+		double gpa = 0;
 		
+		if (letterGrade == 'A') {
+			gpa = 4.0;
+		}else if (letterGrade == 'B') {
+			gpa = 3.0;
+		}else if (letterGrade == 'C') {
+			gpa = 2.0;
+		}else if (letterGrade == 'D') {
+			gpa = 1.0;
+		}else {
+			gpa = 0.0;
+		}
+		
+		return gpa;	
 	}// end calc gpa
 	
 	public static char runAgain() {
-		char runAgainChar = 'N';
+		char runAgainChar;
+		String answer;
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Do you wish to run the program again?:");
+		answer = input.nextLine().toUpperCase();
+		runAgainChar = answer.charAt(0);
+		
+		while(runAgainChar != 'Y' && runAgainChar != 'N') {
+			System.out.println("ERROR: Please enter a valid option...");
+			System.out.print("Do you wish to run the program again?:");
+			answer = input.nextLine().toUpperCase();
+			runAgainChar = answer.charAt(0);
+		}
+		
 		return runAgainChar;
 		
 	} // end run again
