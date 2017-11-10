@@ -173,7 +173,7 @@ public class Project3 {
 		do {
 			System.out.print("Enter a test score 0 - 100: ");
 			testScore = input.nextDouble();
-		}while(testScore <=0 || testScore >= 100);
+		}while(testScore < 0 || testScore > 100);
 		
 		return testScore;	//returns a testscore
 	} //end get test score
