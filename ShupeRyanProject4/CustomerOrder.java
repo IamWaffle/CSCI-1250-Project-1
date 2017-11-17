@@ -1,4 +1,3 @@
-
 /*********************************************************************************** * 
 ------------------------------------------------------------------------------------ 
 * 		 File name: CustomerOrder.java 
@@ -15,7 +14,7 @@ import java.text.DecimalFormat;
 
 public class CustomerOrder{
 	
-	final private double COST_GADGET = 5.00;          //Cost of a gadget CONSTANT
+	final private double COST_GADGET = 5.00;         //Cost of a gadget CONSTANT
 	final private double COST_WIDGET = 10.00;        //Cost of a Widget CONSTANT
 	final private double CHARGE_O = 20.00;           //Charge for Overnight shipping CONSTANT
 	final private double CHARGE_P = 15.00;			 //Charge for Priority shipping CONSTANT
@@ -81,7 +80,7 @@ public class CustomerOrder{
 	* Notes on specifications, special algorithms, and assumptions: 
 	*  
 	*  
-	*
+	*@param num
 	* <hr> 
 	*/
 	
@@ -102,7 +101,7 @@ public class CustomerOrder{
 	* Notes on specifications, special algorithms, and assumptions: 
 	*  
 	*  
-	*
+	*@param num
 	* <hr> 
 	*/
 	
@@ -123,7 +122,7 @@ public class CustomerOrder{
 	* Notes on specifications, special algorithms, and assumptions: 
 	*  
 	*  
-	*
+	*@param num
 	* <hr> 
 	*/
 	
@@ -144,7 +143,7 @@ public class CustomerOrder{
 	* Notes on specifications, special algorithms, and assumptions: 
 	*  
 	*  
-	*
+	*@param num
 	* <hr> 
 	*/
 	
@@ -170,7 +169,7 @@ public class CustomerOrder{
 	* Notes on specifications, special algorithms, and assumptions: 
 	*  
 	*  
-	*
+	*@param num
 	* <hr> 
 	*/
 	
@@ -196,7 +195,7 @@ public class CustomerOrder{
 	* Notes on specifications, special algorithms, and assumptions: 
 	*  
 	*  
-	*
+	*@param c
 	* <hr> 
 	*/
 	
@@ -222,7 +221,7 @@ public class CustomerOrder{
 	* Notes on specifications, special algorithms, and assumptions: 
 	*  
 	*  
-	*
+	*@param c
 	* <hr> 
 	*/
 	
@@ -248,7 +247,7 @@ public class CustomerOrder{
 	* Notes on specifications, special algorithms, and assumptions: 
 	*  
 	*  
-	*
+	* @param num
 	* <hr> 
 	*/
 	
@@ -451,9 +450,47 @@ public class CustomerOrder{
 	*/
 	
 	public String toString() {
-		String output = null;
+		String output;
+		
+		output = "********** ORDER DETAILS **********"
+			   + "\n  Customer Number: " + getCustomerNumber()
+			   + "\n  Customer Name:   " + getCustomerName()
+			   + "\n  Phone Number:    " + getPhoneNum()
+			   + "\n-----------------------------------"
+			   + "\n        # Gadgets: " + getNumGadgets()
+			   + "\n        # Widgets: " + getNumWidgets()
+			   + "\n"
+			   + "\n        Discount: " + format(calcDiscount())
+			   + "\n        Tax:      " + format(calcTax())
+			   + "\n        Shipping: " + format(calcShipping())
+			   + "\n"
+			   + "\n        Total Due:" + format(TotalDue())
+			   + "\n***********************************";
 		
 		return output;
+	}
+	
+	/******************************************************************************** 
+	* Method Name: format <br> 
+	* Method Purpose: To format the number sent in to currency     
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/17/17 <br> 
+	* Date last modified: 11/17/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	* @param num double
+	* @return fnum<hr> 
+	*/
+	
+	public String format(double num) {
+		DecimalFormat formatCash = new DecimalFormat("$ #,##0.00");
+		String fnum = formatCash.format(num);
+		return fnum;
 	}
 	
 	/******************************************************************************** 
@@ -470,7 +507,7 @@ public class CustomerOrder{
 	* Notes on specifications, special algorithms, and assumptions: 
 	*  
 	*  
-	*
+	* @param original CustomerOrder
 	* @return tf<hr> 
 	*/
 	
@@ -497,7 +534,7 @@ public class CustomerOrder{
 	
 	/******************************************************************************** 
 	* Method Name: translateTaxCode <br> 
-	* Method Purpose:  Based on the tax code stored, it should return “Taxable” or “NonTaxable”     
+	* Method Purpose:  Based on the tax code stored, it should give back Taxable or NonTaxable     
 	*      <br> 
 	* 
 	* <hr> 
@@ -527,7 +564,7 @@ public class CustomerOrder{
 	
 	/******************************************************************************** 
 	* Method Name: translateShippingCode <br> 
-	* Method Purpose:  Based on the shipping code stored, it should return “Priority”, “Overnight” or “Standard”     
+	* Method Purpose:  Based on the shipping code stored, it should give back Priority, Overnight or Standard     
 	*      <br> 
 	* 
 	* <hr> 
@@ -560,7 +597,7 @@ public class CustomerOrder{
 	
 	/******************************************************************************** 
 	* Method Name: translateDiscountCode <br> 
-	* Method Purpose:  Based on the discount code stored, it should return “Loyalty”, “Employee”  or “No Discount”    
+	* Method Purpose:  Based on the discount code stored, it should give back Loyalty, Employee  or No Discount    
 	*      <br> 
 	* 
 	* <hr> 
@@ -593,7 +630,7 @@ public class CustomerOrder{
 	
 	/******************************************************************************** 
 	* Method Name: calcItemTotal <br> 
-	* Method Purpose: Calculate and return the total cost of the gadgets and widgets without anything else added in (no shipping, tax, discounts, etc)   
+	* Method Purpose: Calculate and give back the total cost of the gadgets and widgets without anything else added in (no shipping, tax, discounts, etc)   
 	*      <br> 
 	* 
 	* <hr> 
@@ -618,7 +655,7 @@ public class CustomerOrder{
 	
 	/******************************************************************************** 
 	* Method Name: calcDiscount <br> 
-	* Method Purpose:  Calculate and return the appropriate amount of discount based on the item total (without tax or shipping added in)   
+	* Method Purpose:  Calculate and give back the appropriate amount of discount based on the item total (without tax or shipping added in)   
 	*      <br> 
 	* 
 	* <hr> 
@@ -651,7 +688,7 @@ public class CustomerOrder{
 	
 	/******************************************************************************** 
 	* Method Name: calcTax <br> 
-	* Method Purpose:  Calculate and return the amount of tax based on the item total including any discounts   
+	* Method Purpose:  Calculate and give back the amount of tax based on the item total including any discounts   
 	*      <br> 
 	* 
 	* <hr> 
@@ -676,7 +713,7 @@ public class CustomerOrder{
 	
 	/******************************************************************************** 
 	* Method Name: calcShipping <br> 
-	* Method Purpose:  Determine and return the appropriate shipping amount    
+	* Method Purpose:  Determine and give back the appropriate shipping amount    
 	*      <br> 
 	* 
 	* <hr> 
@@ -709,7 +746,7 @@ public class CustomerOrder{
 	
 	/******************************************************************************** 
 	* Method Name: totalDue <br> 
-	* Method Purpose: Calculate and return the total due, including the item cost, discount, tax and shipping   
+	* Method Purpose: Calculate and give back the total due, including the item cost, discount, tax and shipping   
 	*      <br> 
 	* 
 	* <hr> 
