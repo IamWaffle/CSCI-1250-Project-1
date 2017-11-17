@@ -1,3 +1,16 @@
+
+/*********************************************************************************** * 
+------------------------------------------------------------------------------------ 
+* 		 File name: CustomerOrder.java 
+*        Project name: CSCI 1250 Project 4a 
+* ------------------------------------------------------------------------------------ 
+*     Author Name: Ryan 
+*     Author E-mail: shuper@etsu.edu 
+*     Course-Section: CSCI-1250-004
+*     Creation Date: 11/14/17 
+*     Date of Last Modification: 11/16/17 
+* ------------------------------------------------------------------------------------ */
+
 import java.text.DecimalFormat;
 
 public class CustomerOrder{
@@ -55,17 +68,85 @@ public class CustomerOrder{
 	
 	/****SETTERS****/
 	
+	/******************************************************************************** 
+	* Method Name: setCustomerNumber <br> 
+	* Method Purpose:  Sets the customer number  
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* <hr> 
+	*/
+	
 	public void setCustomerNumber(String num) {
 		customerNumber = num;
 	}
+	
+	/******************************************************************************** 
+	* Method Name: setCustomerName <br> 
+	* Method Purpose:  Sets the customer name    
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* <hr> 
+	*/
 	
 	public void setCustomerName(String num) {
 		customerName = num;
 	}
 	
+	/******************************************************************************** 
+	* Method Name: setPhoneNum <br> 
+	* Method Purpose:  Sets the phone number    
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* <hr> 
+	*/
+	
 	public void setPhoneNum(String num) {
 		phoneNum = num;
 	}
+	
+	/******************************************************************************** 
+	* Method Name: setNumGadgets <br> 
+	* Method Purpose:  Sets the number of gadgets to a user entered value    
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* <hr> 
+	*/
 	
 	public void setNumGadgets(int num) {
 		if (num > 0) {
@@ -76,6 +157,23 @@ public class CustomerOrder{
 		}
 	}
 	
+	/******************************************************************************** 
+	* Method Name: setNumWidgets <br> 
+	* Method Purpose:  Sets the number of widgets to a user entered value    
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* <hr> 
+	*/
+	
 	public void setNumWidgets(int num) {
 		if (num > 0) {
 			numWidgets = num;
@@ -84,6 +182,23 @@ public class CustomerOrder{
 			numWidgets = 0;
 		}
 	}
+	
+	/******************************************************************************** 
+	* Method Name: setTaxCode <br> 
+	* Method Purpose:  Sets the tax code or an N or a T    
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* <hr> 
+	*/
 	
 	public void setTaxCode(char c) {
 		if (c == 'N') {
@@ -94,6 +209,23 @@ public class CustomerOrder{
 		}
 	}
 	
+	/******************************************************************************** 
+	* Method Name: setShippingCode <br> 
+	* Method Purpose:  Sets the discount code to a O, P or S    
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* <hr> 
+	*/
+	
 	public void setShippingCode(char c) {
 		if (c == 'O' || c == 'P') {
 			shippingCode = c;
@@ -102,6 +234,23 @@ public class CustomerOrder{
 			shippingCode = 'S';
 		}
 	}
+	
+	/******************************************************************************** 
+	* Method Name: setDiscountCode <br> 
+	* Method Purpose:  Sets the discount code to a 0, 1 or 2    
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* <hr> 
+	*/
 	
 	public void setDiscountCode(int num) {
 		if (num == 1 || num == 2) {
@@ -112,36 +261,171 @@ public class CustomerOrder{
 		}
 	}
 	
-	/****GETTERS
-	 * @return ****/
+	/****GETTERS*/
+	 
+	/******************************************************************************** 
+	* Method Name: getCustomerNum <br> 
+	* Method Purpose:  Return the customer number     
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return customerNumber<hr> 
+	*/
 	
 	public String getCustomerNumber() {
 		return customerNumber;
 	}
 	
+	/******************************************************************************** 
+	* Method Name: getCustomerName <br> 
+	* Method Purpose:  Return the customer name     
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return customerName<hr> 
+	*/
+	
 	public String getCustomerName() {
 		return customerName;
 	}
+	
+	/******************************************************************************** 
+	* Method Name: getPhoneNum <br> 
+	* Method Purpose:  Return the phone number     
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return phoneNum<hr> 
+	*/
 	
 	public String getPhoneNum() {
 		return phoneNum;
 	}
 	
+	/******************************************************************************** 
+	* Method Name: getnumGadgets <br> 
+	* Method Purpose:  Return the number of gadgets     
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return numGadgets<hr> 
+	*/
+	
 	public int getNumGadgets() {
 		return numGadgets;
 	}
+	
+	/******************************************************************************** 
+	* Method Name: getnumWidgets <br> 
+	* Method Purpose:  Return the number of widgets     
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return numWidgets<hr> 
+	*/
 	
 	public int getNumWidgets() {
 		return numWidgets;
 	}
 	
+	/******************************************************************************** 
+	* Method Name: getTaxCode <br> 
+	* Method Purpose:  Return the tax code     
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return taxCode<hr> 
+	*/
+	
 	public char getTaxCode() {
 		return taxCode;
 	}
 	
+	/******************************************************************************** 
+	* Method Name: getShippingCode <br> 
+	* Method Purpose:  Return the shipping code     
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return shippingCode<hr> 
+	*/
+	
 	public char getShippingCode() {
 		return shippingCode;
 	}
+	
+	/******************************************************************************** 
+	* Method Name: getDiscountCode <br> 
+	* Method Purpose:  Return the discount code     
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return discountCode<hr> 
+	*/
 	
 	public int getDiscountCode() {
 		return discountCode;
@@ -149,11 +433,46 @@ public class CustomerOrder{
 	
 	/****METHODS****/
 	
+	/******************************************************************************** 
+	* Method Name: toString <br> 
+	* Method Purpose:  Return the order information formatted into one string     
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return output<hr> 
+	*/
+	
 	public String toString() {
 		String output = null;
 		
 		return output;
 	}
+	
+	/******************************************************************************** 
+	* Method Name: equals <br> 
+	* Method Purpose:   Return a boolean value indicating whether or not the current object is equal to the object passed in 
+	*                   (determined by comparing all class attributes)     
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return tf<hr> 
+	*/
 	
 	public boolean equals(CustomerOrder original) {
 		boolean tf;
@@ -176,6 +495,23 @@ public class CustomerOrder{
 		return tf;
 	}
 	
+	/******************************************************************************** 
+	* Method Name: translateTaxCode <br> 
+	* Method Purpose:  Based on the tax code stored, it should return “Taxable” or “NonTaxable”     
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return translatedString<hr> 
+	*/
+	
 	public String translateTaxCode() {
 		String translatedString;
 		
@@ -188,6 +524,23 @@ public class CustomerOrder{
 		
 		return translatedString;
 	}
+	
+	/******************************************************************************** 
+	* Method Name: translateShippingCode <br> 
+	* Method Purpose:  Based on the shipping code stored, it should return “Priority”, “Overnight” or “Standard”     
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return translatedString<hr> 
+	*/
 	
 	public String translateShippingCode() {
 		String translatedString;
@@ -205,6 +558,23 @@ public class CustomerOrder{
 		return translatedString;
 	}
 	
+	/******************************************************************************** 
+	* Method Name: translateDiscountCode <br> 
+	* Method Purpose:  Based on the discount code stored, it should return “Loyalty”, “Employee”  or “No Discount”    
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return translatedString<hr> 
+	*/
+	
 	public String translateDiscountCode() {
 		String translatedString;
 		
@@ -221,6 +591,23 @@ public class CustomerOrder{
 		return translatedString;
 	}
 	
+	/******************************************************************************** 
+	* Method Name: calcItemTotal <br> 
+	* Method Purpose: Calculate and return the total cost of the gadgets and widgets without anything else added in (no shipping, tax, discounts, etc)   
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return itemTotal<hr> 
+	*/
+	
 	public double calcItemTotal() {
 		double itemTotal;
 		
@@ -228,6 +615,23 @@ public class CustomerOrder{
 		
 		return itemTotal;		
 	}
+	
+	/******************************************************************************** 
+	* Method Name: calcDiscount <br> 
+	* Method Purpose:  Calculate and return the appropriate amount of discount based on the item total (without tax or shipping added in)   
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return discount<hr> 
+	*/
 	
 	public double calcDiscount() {
 		double discount;
@@ -245,6 +649,23 @@ public class CustomerOrder{
 		return discount;
 	}
 	
+	/******************************************************************************** 
+	* Method Name: calcTax <br> 
+	* Method Purpose:  Calculate and return the amount of tax based on the item total including any discounts   
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return tax<hr> 
+	*/ 
+	
 	public double calcTax() {
 		double tax;
 		
@@ -252,6 +673,23 @@ public class CustomerOrder{
 		
 		return tax;
 	}
+	
+	/******************************************************************************** 
+	* Method Name: calcShipping <br> 
+	* Method Purpose:  Determine and return the appropriate shipping amount    
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return shipping<hr> 
+	*/ 
 	
 	public double calcShipping() {
 		double shipping;
@@ -268,6 +706,23 @@ public class CustomerOrder{
 		
 		return shipping;
 	}
+	
+	/******************************************************************************** 
+	* Method Name: totalDue <br> 
+	* Method Purpose: Calculate and return the total due, including the item cost, discount, tax and shipping   
+	*      <br> 
+	* 
+	* <hr> 
+	* Date created: 11/16/17 <br> 
+	* Date last modified: 11/16/17 <br> 
+	* 
+	* <hr> 
+	* Notes on specifications, special algorithms, and assumptions: 
+	*  
+	*  
+	*
+	* @return total<hr> 
+	*/ 
 	
 	public double TotalDue() {
 		double total;
