@@ -2,7 +2,7 @@ import java.text.DecimalFormat;
 
 public class CustomerOrder{
 	
-	final private double COST_GAGET = 5.00;          //Cost of a gadget CONSTANT
+	final private double COST_GADGET = 5.00;          //Cost of a gadget CONSTANT
 	final private double COST_WIDGET = 10.00;        //Cost of a Widget CONSTANT
 	final private double CHARGE_O = 20.00;           //Charge for Overnight shipping CONSTANT
 	final private double CHARGE_P = 15.00;			 //Charge for Priority shipping CONSTANT
@@ -68,11 +68,21 @@ public class CustomerOrder{
 	}
 	
 	public void setNumGadgets(int num) {
-		numGadgets = num;
+		if (num > 0) {
+			numGadgets = num;
+		}
+		else {
+			numGadgets = 0;
+		}
 	}
 	
 	public void setNumWidgets(int num) {
-		numWidgets = num;
+		if (num > 0) {
+			numWidgets = num;
+		}
+		else {
+			numWidgets = 0;
+		}
 	}
 	
 	public void setTaxCode(char c) {
@@ -145,11 +155,125 @@ public class CustomerOrder{
 		return output;
 	}
 	
-	public boolean equals() {
-		boolean tf = false;
-		return tf;
+	public boolean equals(CustomerOrder original) {
+		boolean tf;
 		
+		if(customerNumber == original.customerNumber &&
+		   customerName == original.customerName &&
+		   phoneNum == original.phoneNum &&
+		   numGadgets == original.numGadgets &&
+		   numWidgets == original.numWidgets &&
+		   taxCode == original.taxCode &&
+		   shippingCode == original.shippingCode &&
+		   discountCode == original.discountCode) 
+		{
+			tf = true;
+		}
+		else {
+			tf = false;
+		}
+		
+		return tf;
 	}
 	
+	public String translateTaxCode() {
+		String translatedString;
+		
+		if(getTaxCode() == 'T') {
+			translatedString = "Taxable";
+		}
+		else {
+			translatedString = "Non-Taxable";
+		}
+		
+		return translatedString;
+	}
 	
+	public String translateShippingCode() {
+		String translatedString;
+		
+		if(getShippingCode() == 'P') {
+			translatedString = "Priority";
+		}
+		else if (getShippingCode() == 'O') {
+			translatedString = "Overnight";
+		}
+		else{
+			translatedString = "Standard";
+		}
+		
+		return translatedString;
+	}
+	
+	public String translateDiscountCode() {
+		String translatedString;
+		
+		if(getDiscountCode() == 0) {
+			translatedString = "No Discount";
+		}
+		else if (getDiscountCode() == 1) {
+			translatedString = "Loyalty";
+		}
+		else{
+			translatedString = "Employee";
+		}
+		
+		return translatedString;
+	}
+	
+	public double calcItemTotal() {
+		double itemTotal;
+		
+		itemTotal = (getNumGadgets() * COST_GADGET) + (getNumWidgets() * COST_WIDGET);
+		
+		return itemTotal;		
+	}
+	
+	public double calcDiscount() {
+		double discount;
+		
+		if(getDiscountCode() == 1) {
+			discount = calcItemTotal() * DISCOUNT_LOYALTY;
+		}
+		else if (getDiscountCode() == 2) {
+			discount = calcItemTotal() * DISCOUNT_EMPLOYEE;
+		}
+		else {
+			discount = 0.00;
+		}
+		
+		return discount;
+	}
+	
+	public double calcTax() {
+		double tax;
+		
+		tax = (calcItemTotal() - calcDiscount()) * TAX_RATE;
+		
+		return tax;
+	}
+	
+	public double calcShipping() {
+		double shipping;
+		
+		if(getShippingCode() == 'O') {
+			shipping = CHARGE_O;
+		}
+		else if (getShippingCode() == 'P') {
+			shipping = CHARGE_P;
+		}
+		else {
+			shipping = CHARGE_S;
+		}
+		
+		return shipping;
+	}
+	
+	public double TotalDue() {
+		double total;
+		
+		total = calcItemTotal() - calcDiscount() + calcTax() - calcShipping();
+		
+		return total;
+	}
 }
