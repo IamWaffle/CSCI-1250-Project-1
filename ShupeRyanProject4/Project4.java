@@ -1,3 +1,5 @@
+package project3;
+
 import javax.swing.JOptionPane;
 import java.text.DecimalFormat;
 
@@ -10,7 +12,7 @@ import java.text.DecimalFormat;
 *     Author E-mail: shuper@etsu.edu 
 *     Course-Section: CSCI-1250-004
 *     Creation Date: 11/20/17 
-*     Date of Last Modification: 11/20/17 
+*     Date of Last Modification: 11/29/17 
 * ------------------------------------------------------------------------------------ */
 
 public class Project4{
@@ -61,11 +63,9 @@ public class Project4{
 		
 	}
 	
-	//TO DO: This method currently displays a menu.  However, it does not do input validation.  You
-	//are to add input validation to the method
 	public static int displayMenu(int numOrders)
 	{
-		int selection;
+		int selection = 0;
 		String input;
 		
 		String menu = "\n  CUSTOMER ORDER MENU"
@@ -77,9 +77,10 @@ public class Project4{
 					+ "\n\n You currently have " + numOrders + " orders in the system."
 					+ "\n\n Selection: ";
 		
-		input = JOptionPane.showInputDialog(menu);
-		selection = Integer.parseInt(input);
-				
+		while(selection > 4 && selection <=0) {
+			input = JOptionPane.showInputDialog(menu);
+			selection = Integer.parseInt(input);
+		}
 		return selection;
 	}
 	
@@ -108,6 +109,10 @@ public class Project4{
 	//duplicated elsewhere.
 	public static CustomerOrder inputOrder()
 	{
+		
+		//I inadvertently left off the prompt in the skeleton program for the customer number.  
+		//So, you will need to go to the inputOrder method and add the prompt for that.  
+		//Just follow the example of how everything else is being prompted for and passed to the setter.
 		CustomerOrder temp = new CustomerOrder();
 		
 		temp.setCustomerName
